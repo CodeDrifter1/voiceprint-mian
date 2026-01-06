@@ -29,9 +29,35 @@ pip install -r requirements.txt
 
 # WebSocket 支持
 pip install "uvicorn[standard]" websockets
+
+# 说话人分离依赖
+pip install hdbscan umap-learn
 ```
 
-### 2. 创建 MySQL 数据库
+### 2. 安装 Pyannote 3.1（可选，更强的说话人分离）
+
+Pyannote 3.1 提供更强的说话人分离能力，特别是重叠语音处理。
+
+```bash
+# 安装 pyannote
+pip install pyannote.audio==3.1.1
+
+# Hugging Face 授权（必须）
+pip install huggingface_hub
+huggingface-cli login
+```
+
+**Hugging Face 授权步骤：**
+1. 注册账号：https://huggingface.co/
+2. 访问并同意使用协议：
+   - https://huggingface.co/pyannote/speaker-diarization-3.1
+   - https://huggingface.co/pyannote/segmentation-3.0
+3. 创建 Token：https://huggingface.co/settings/tokens
+4. 执行 `huggingface-cli login` 输入 Token
+
+**注意**：如果不安装 Pyannote，系统会自动使用 3DSpeaker 的分离模型（也很好用）。
+
+### 3. 创建 MySQL 数据库
 
 ```sql
 CREATE DATABASE voiceprint_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -47,7 +73,7 @@ CREATE TABLE voiceprints (
 );
 ```
 
-### 3. 配置文件
+### 4. 配置文件
 
 编辑 `data/.voiceprint.yaml`：
 
@@ -65,7 +91,7 @@ server:
   authorization: your-api-token-here  # 留空会自动生成
 ```
 
-### 4. 创建目录
+### 5. 创建目录
 
 ```bash
 mkdir -p tmp logs data

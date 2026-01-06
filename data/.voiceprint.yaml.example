@@ -1,0 +1,19 @@
+# 声纹识别服务配置文件示例
+# 复制此文件为 .voiceprint.yaml 并修改配置
+
+mysql:
+  database: voiceprint
+  host: 127.0.0.1
+  password: your_password_here    # 修改为你的数据库密码
+  port: 3306
+  user: voiceprint
+
+server:
+  authorization: your_api_key_here  # 修改为你的API密钥 (可用 uuid 生成)
+  host: 0.0.0.0
+  port: 8520
+
+voiceprint:
+  similarity_threshold: 0.4         # 声纹相似度阈值 (0-1)
+  target_sample_rate: 16000         # 音频采样率
+  tmp_dir: tmp
