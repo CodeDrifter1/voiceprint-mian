@@ -1,0 +1,17 @@
+modelscope==1.13.0
+datasets==2.14.5
+numpy==1.23.5
+packaging==21.3
+addict==2.4.0
+transformers==4.52.4
+torch==2.2.2
+sentencepiece==0.2.0
+soundfile==0.13.1
+torchaudio==2.2.2
+pyyaml==6.0.1
+fastapi==0.110.2
+uvicorn==0.29.0
+PyMySQL==1.1.0
+python-multipart==0.0.9
+librosa==0.10.1
+loguru==0.7.2
