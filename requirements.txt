@@ -1,17 +1,38 @@
+# 基础依赖
 modelscope==1.13.0
-datasets==2.14.5
-numpy==1.23.5
-packaging==21.3
-addict==2.4.0
 transformers==4.52.4
 torch==2.2.2
-sentencepiece==0.2.0
-soundfile==0.13.1
 torchaudio==2.2.2
-pyyaml==6.0.1
+numpy==1.23.5
+
+# 数据处理
+datasets>=2.18.0
+packaging==21.3
+addict==2.4.0
+sentencepiece==0.2.0
+
+# 音频处理
+soundfile==0.13.1
+librosa==0.10.1
+
+# Web框架
 fastapi==0.110.2
 uvicorn==0.29.0
-PyMySQL==1.1.0
 python-multipart==0.0.9
-librosa==0.10.1
+
+# 数据库
+PyMySQL==1.1.0
+
+# 配置和日志
+pyyaml==6.0.1
 loguru==0.7.2
+
+# 说话人分离 (Pyannote)
+pyannote.audio>=3.1.0
+hdbscan
+umap-learn
+
+# 电子病历功能 (新增)
+pypinyin
+reportlab
+requests
